@@ -1,0 +1,93 @@
+﻿@model List<MusicStoreApp.Models.Album>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>All Albums</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+
+
+@for(int i = 0; i < Model.Count(); i++)
+{
+    var item = Model[i];
+
+    if (i % 3 == 0)
+    {
+        @: <div class="row mb-3">
+    }
+
+    <div class="col-4">
+            <div class="card">
+                <img class="card-img-top" src="@item.AlbumImage" style="width:100%; height:100%;" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@item.AlbumName</h5>
+                    <p class="card-text">@item.AlbumDescription</p>
+                    <p class="card-text">Price: €@item.AlbumPrice</p>
+                    <p class="card-text">By: @item.Artist.StageName</p>
+                    <p class="card-text">Rating: @item.AlbumRating</p>
+                </div>
+            </div>
+    </div>
+
+    if(i % 3 == 2)
+        {
+            @: </div>
+        }
+
+}
+
+
+
+@* <table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AlbumName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlbumPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlbumImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlbumDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Artist)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlbumName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlbumPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlbumImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlbumDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Artist.StageName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table> *@
