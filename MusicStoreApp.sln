@@ -5,6 +5,12 @@ VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStoreApp", "MusicStoreApp\MusicStoreApp.csproj", "{03D66E94-2EE0-4784-8CA8-24F5A77C71C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStore.Domain", "MusicStore.Domain\MusicStore.Domain.csproj", "{9E84B6DC-0761-43E1-AE08-3A6217C16059}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStore.Repository", "MusicStore.Repository\MusicStore.Repository.csproj", "{F5F48525-9DDC-40E9-9055-98B91523E074}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStore.Service", "MusicStore.Service\MusicStore.Service.csproj", "{1866E991-FCEA-46BD-982A-A63CE39A75D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{03D66E94-2EE0-4784-8CA8-24F5A77C71C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03D66E94-2EE0-4784-8CA8-24F5A77C71C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03D66E94-2EE0-4784-8CA8-24F5A77C71C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E84B6DC-0761-43E1-AE08-3A6217C16059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E84B6DC-0761-43E1-AE08-3A6217C16059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E84B6DC-0761-43E1-AE08-3A6217C16059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E84B6DC-0761-43E1-AE08-3A6217C16059}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5F48525-9DDC-40E9-9055-98B91523E074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5F48525-9DDC-40E9-9055-98B91523E074}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5F48525-9DDC-40E9-9055-98B91523E074}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5F48525-9DDC-40E9-9055-98B91523E074}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1866E991-FCEA-46BD-982A-A63CE39A75D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1866E991-FCEA-46BD-982A-A63CE39A75D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1866E991-FCEA-46BD-982A-A63CE39A75D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1866E991-FCEA-46BD-982A-A63CE39A75D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

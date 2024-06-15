@@ -285,3 +285,14 @@ C:\Users\Vedran\Desktop\FINKI\Semestar 6\IS\MusicStoreApp\MusicStoreApp\bin\Debu
 C:\Users\Vedran\Desktop\FINKI\Semestar 6\IS\MusicStoreApp\MusicStoreApp\bin\Debug\net8.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\Vedran\Desktop\FINKI\Semestar 6\IS\MusicStoreApp\MusicStoreApp\bin\Debug\net8.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\Vedran\Desktop\FINKI\Semestar 6\IS\MusicStoreApp\MusicStoreApp\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\Vedran\Desktop\FINKI\Semestar 6\IS\MusicStoreApp\MusicStoreApp\bin\Debug\net8.0\EntityFramework.SqlServer.dll
+C:\Users\Vedran\Desktop\FINKI\Semestar 6\IS\MusicStoreApp\MusicStoreApp\bin\Debug\net8.0\EntityFramework.dll
+C:\Users\Vedran\Desktop\FINKI\Semestar 6\IS\MusicStoreApp\MusicStoreApp\bin\Debug\net8.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Vedran\Desktop\FINKI\Semestar 6\IS\MusicStoreApp\MusicStoreApp\bin\Debug\net8.0\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Vedran\Desktop\FINKI\Semestar 6\IS\MusicStoreApp\MusicStoreApp\bin\Debug\net8.0\MusicStore.Domain.dll
+C:\Users\Vedran\Desktop\FINKI\Semestar 6\IS\MusicStoreApp\MusicStoreApp\bin\Debug\net8.0\MusicStore.Repository.dll
+C:\Users\Vedran\Desktop\FINKI\Semestar 6\IS\MusicStoreApp\MusicStoreApp\bin\Debug\net8.0\MusicStore.Service.dll
+C:\Users\Vedran\Desktop\FINKI\Semestar 6\IS\MusicStoreApp\MusicStoreApp\bin\Debug\net8.0\MusicStore.Domain.pdb
+C:\Users\Vedran\Desktop\FINKI\Semestar 6\IS\MusicStoreApp\MusicStoreApp\bin\Debug\net8.0\MusicStore.Repository.pdb
+C:\Users\Vedran\Desktop\FINKI\Semestar 6\IS\MusicStoreApp\MusicStoreApp\bin\Debug\net8.0\MusicStore.Service.pdb
+C:\Users\Vedran\Desktop\FINKI\Semestar 6\IS\MusicStoreApp\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.sourcelink.json
