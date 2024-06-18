@@ -296,19 +296,6 @@ C:\Users\Vedran\Desktop\FINKI\Semestar 6\IS\MusicStoreApp\MusicStoreApp\bin\Debu
 C:\Users\Vedran\Desktop\FINKI\Semestar 6\IS\MusicStoreApp\MusicStoreApp\bin\Debug\net8.0\MusicStore.Repository.pdb
 C:\Users\Vedran\Desktop\FINKI\Semestar 6\IS\MusicStoreApp\MusicStoreApp\bin\Debug\net8.0\MusicStore.Service.pdb
 C:\Users\Vedran\Desktop\FINKI\Semestar 6\IS\MusicStoreApp\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.sourcelink.json
-C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.csproj.AssemblyReference.cache
-C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.AssemblyInfoInputs.cache
-C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.AssemblyInfo.cs
-C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.csproj.CoreCompileInputs.cache
-C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.RazorAssemblyInfo.cache
-C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.RazorAssemblyInfo.cs
-C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.sourcelink.json
-C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.dll
-C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\refint\MusicStoreApp.dll
-C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.pdb
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\appsettings.json
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\MusicStoreApp.staticwebassets.runtime.json
@@ -319,7 +306,11 @@ C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\MusicStoreApp.pdb
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\ClosedXML.dll
+C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\ExcelNumberFormat.dll
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\Humanizer.dll
+C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\Irony.dll
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
@@ -383,6 +374,7 @@ C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\NuGet.ProjectModel.dll
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\NuGet.Protocol.dll
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\NuGet.Versioning.dll
+C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\SixLabors.Fonts.dll
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\SQLitePCLRaw.batteries_v2.dll
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\SQLitePCLRaw.core.dll
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\SQLitePCLRaw.provider.e_sqlite3.dll
@@ -395,12 +387,14 @@ C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\System.Drawing.Common.dll
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\System.IO.Packaging.dll
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\System.Memory.Data.dll
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\System.Runtime.Caching.dll
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\System.Security.Permissions.dll
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\System.Windows.Extensions.dll
+C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\XLParser.dll
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\af\Humanizer.resources.dll
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\ar\Humanizer.resources.dll
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\az\Humanizer.resources.dll
@@ -577,6 +571,16 @@ C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\MusicStore.Domain.pdb
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\MusicStore.Repository.pdb
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\bin\Debug\net8.0\MusicStore.Service.pdb
+C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.csproj.AssemblyReference.cache
+C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.AssemblyInfoInputs.cache
+C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.AssemblyInfo.cs
+C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.csproj.CoreCompileInputs.cache
+C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.RazorAssemblyInfo.cache
+C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.RazorAssemblyInfo.cs
+C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.sourcelink.json
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\staticwebassets\msbuild.MusicStoreApp.Microsoft.AspNetCore.StaticWebAssets.props
@@ -588,5 +592,8 @@ C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\scopedcss\bundle\MusicStoreApp.styles.css
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\scopedcss\projectbundle\MusicStoreApp.bundle.scp.css
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicSto.0B22836D.Up2Date
+C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.dll
+C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\refint\MusicStoreApp.dll
+C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.pdb
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\MusicStoreApp.genruntimeconfig.cache
 C:\Users\Todor\Desktop\Music Project IS\music-store-app\MusicStoreApp\obj\Debug\net8.0\ref\MusicStoreApp.dll

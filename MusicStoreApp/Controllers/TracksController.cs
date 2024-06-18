@@ -64,9 +64,7 @@ namespace MusicStoreApp.Controllers
         [Authorize]
         public IActionResult DeleteFromUserPlaylist(Guid id)
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-            _trackService.DeleteTrackFromUserPlaylist(id, userId);
+            _trackService.DeleteTrackFromUserPlaylist(id);
 
             return RedirectToAction("Index", "UserPlaylists");
         }

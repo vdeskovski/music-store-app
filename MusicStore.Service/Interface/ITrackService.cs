@@ -10,7 +10,7 @@ namespace MusicStore.Service.Interface
     public interface ITrackService
     {
         void AddTrackToUserPlaylist(UserPlaylist playlist, Track track);
-        void DeleteTrackFromUserPlaylist(Guid id, string userId);
+        void DeleteTrackFromUserPlaylist(Guid id);
         List<Track> GetAllTracks();
         Track GetDetailsForTrack(Guid id);
         void CreateNewTrack(Track a);
