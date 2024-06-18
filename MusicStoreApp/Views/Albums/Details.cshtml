@@ -41,6 +41,43 @@
         </dd>
     </dl>
 </div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Track Name
+            </th>
+            <th>
+                Duration
+            </th>
+            <th>
+                Album
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.AlbumTracks) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrackName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Album.AlbumName)
+            </td>
+            <td>
+                <a asp-controller="Tracks" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-controller="Tracks" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-controller="Tracksr" asp-action="Delete" asp-route-id="@item.Id">Delete</a> | 
+                <a asp-controller="Tracks" asp-action="AddToPlaylist" asp-route-id="@item.Id" class="btn btn-primary">Add to playlist</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
