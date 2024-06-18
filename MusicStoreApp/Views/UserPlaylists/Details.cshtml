@@ -72,7 +72,7 @@
                         @Html.DisplayFor(modelItem => item.Track.Album.Artist.StageName)
                     </td>
                     <td>
-                        <a class="btn btn-danger" asp-action="DeleteFromUserPlaylist" asp-controller="Tracks" asp-route-id="@item.Track.Id">Delete</a>
+                        <a class="btn btn-danger" asp-action="DeleteFromUserPlaylist" asp-controller="Tracks" asp-route-id="@item.Id">Delete</a>
                     </td>
                 </tr>
             }

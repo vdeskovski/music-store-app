@@ -34,6 +34,7 @@ namespace MusicStore.Repository.Implementation
         public UserPlaylist Get(Guid id)
         {
             return entities
+                .Include("User")
                 .Include("TrackInUserPlaylists")
                 .Include("TrackInUserPlaylists.Track")
                 .Include("TrackInUserPlaylists.Track.Album")
@@ -43,7 +44,13 @@ namespace MusicStore.Repository.Implementation
 
         public IEnumerable<UserPlaylist> GetAll()
         {
-            return entities.AsEnumerable();
+            return entities
+                .Include("User")
+                .Include("TrackInUserPlaylists")
+                .Include("TrackInUserPlaylists.Track")
+                .Include("TrackInUserPlaylists.Track.Album")
+                .Include("TrackInUserPlaylists.Track.Album.Artist")
+                .AsEnumerable();
         }
 
         public void Insert(UserPlaylist entity)
