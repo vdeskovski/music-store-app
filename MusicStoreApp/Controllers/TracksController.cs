@@ -7,8 +7,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using MusicStoreApp.Data;
-using MusicStoreApp.Models;
+using MusicStore.Domain.DomainModels;
+using MusicStore.Repository;
 using NuGet.DependencyResolver;
 
 namespace MusicStoreApp.Controllers

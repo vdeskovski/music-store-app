@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStoreApp\\MusicStoreApp.csproj": {}
+    "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStoreApp\\MusicStoreApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Domain\\MusicStore.Domain.csproj": {
+    "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Domain\\MusicStore.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Domain\\MusicStore.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Domain\\MusicStore.Domain.csproj",
         "projectName": "MusicStore.Domain",
-        "projectPath": "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Domain\\MusicStore.Domain.csproj",
-        "packagesPath": "C:\\Users\\Vedran\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Domain\\obj\\",
+        "projectPath": "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Domain\\MusicStore.Domain.csproj",
+        "packagesPath": "C:\\Users\\Todor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Vedran\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Todor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -74,17 +74,17 @@
         }
       }
     },
-    "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Repository\\MusicStore.Repository.csproj": {
+    "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Repository\\MusicStore.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Repository\\MusicStore.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Repository\\MusicStore.Repository.csproj",
         "projectName": "MusicStore.Repository",
-        "projectPath": "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Repository\\MusicStore.Repository.csproj",
-        "packagesPath": "C:\\Users\\Vedran\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Repository\\obj\\",
+        "projectPath": "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Repository\\MusicStore.Repository.csproj",
+        "packagesPath": "C:\\Users\\Todor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Vedran\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Todor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -98,8 +98,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Domain\\MusicStore.Domain.csproj": {
-                "projectPath": "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Domain\\MusicStore.Domain.csproj"
+              "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Domain\\MusicStore.Domain.csproj": {
+                "projectPath": "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Domain\\MusicStore.Domain.csproj"
               }
             }
           }
@@ -119,10 +119,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.AspNet.Identity.EntityFramework": {
-              "target": "Package",
-              "version": "[2.2.4, )"
-            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.4, )"
@@ -152,17 +148,17 @@
         }
       }
     },
-    "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Service\\MusicStore.Service.csproj": {
+    "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Service\\MusicStore.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Service\\MusicStore.Service.csproj",
+        "projectUniqueName": "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Service\\MusicStore.Service.csproj",
         "projectName": "MusicStore.Service",
-        "projectPath": "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Service\\MusicStore.Service.csproj",
-        "packagesPath": "C:\\Users\\Vedran\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Service\\obj\\",
+        "projectPath": "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Service\\MusicStore.Service.csproj",
+        "packagesPath": "C:\\Users\\Todor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Vedran\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Todor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -176,11 +172,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Domain\\MusicStore.Domain.csproj": {
-                "projectPath": "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Domain\\MusicStore.Domain.csproj"
+              "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Domain\\MusicStore.Domain.csproj": {
+                "projectPath": "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Domain\\MusicStore.Domain.csproj"
               },
-              "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Repository\\MusicStore.Repository.csproj": {
-                "projectPath": "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Repository\\MusicStore.Repository.csproj"
+              "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Repository\\MusicStore.Repository.csproj": {
+                "projectPath": "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Repository\\MusicStore.Repository.csproj"
               }
             }
           }
@@ -219,17 +215,17 @@
         }
       }
     },
-    "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStoreApp\\MusicStoreApp.csproj": {
+    "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStoreApp\\MusicStoreApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStoreApp\\MusicStoreApp.csproj",
+        "projectUniqueName": "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStoreApp\\MusicStoreApp.csproj",
         "projectName": "MusicStoreApp",
-        "projectPath": "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStoreApp\\MusicStoreApp.csproj",
-        "packagesPath": "C:\\Users\\Vedran\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStoreApp\\obj\\",
+        "projectPath": "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStoreApp\\MusicStoreApp.csproj",
+        "packagesPath": "C:\\Users\\Todor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStoreApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Vedran\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Todor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -243,14 +239,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Domain\\MusicStore.Domain.csproj": {
-                "projectPath": "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Domain\\MusicStore.Domain.csproj"
+              "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Domain\\MusicStore.Domain.csproj": {
+                "projectPath": "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Domain\\MusicStore.Domain.csproj"
               },
-              "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Repository\\MusicStore.Repository.csproj": {
-                "projectPath": "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Repository\\MusicStore.Repository.csproj"
+              "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Repository\\MusicStore.Repository.csproj": {
+                "projectPath": "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Repository\\MusicStore.Repository.csproj"
               },
-              "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Service\\MusicStore.Service.csproj": {
-                "projectPath": "C:\\Users\\Vedran\\Desktop\\FINKI\\Semestar 6\\IS\\MusicStoreApp\\MusicStore.Service\\MusicStore.Service.csproj"
+              "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Service\\MusicStore.Service.csproj": {
+                "projectPath": "C:\\Users\\Todor\\Desktop\\Music Project IS\\music-store-app\\MusicStore.Service\\MusicStore.Service.csproj"
               }
             }
           }
