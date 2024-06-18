@@ -5,38 +5,40 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using MusicStoreApp.Data;
-using MusicStoreApp.Models;
+using MusicStore.Domain.DomainModels;
+using MusicStore.Repository;
+using MusicStore.Service.Interface;
 
 namespace MusicStoreApp.Controllers
 {
     public class AlbumsController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IAlbumService _albumService;
+        private readonly IArtistService _artistService;
 
-        public AlbumsController(ApplicationDbContext context)
+        public AlbumsController(IAlbumService albumService, IArtistService artistService)
         {
-            _context = context;
+            _albumService = albumService;
+            _artistService = artistService;
         }
 
         // GET: Albums
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var applicationDbContext = _context.Albums.Include(a => a.Artist);
-            return View(await applicationDbContext.ToListAsync());
+            //var applicationDbContext = _context.Albums.Include(a => a.Artist);
+            return View(_albumService.GetAllAlbums());
         }
 
         // GET: Albums/Details/5
-        public async Task<IActionResult> Details(Guid? id)
+        public IActionResult Details(Guid? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var album = await _context.Albums
-                .Include(a => a.Artist)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var album = _albumService.GetDetailsForAlbum(id.Value);
+
             if (album == null)
             {
                 return NotFound();
@@ -48,7 +50,7 @@ namespace MusicStoreApp.Controllers
         // GET: Albums/Create
         public IActionResult Create()
         {
-            ViewData["ArtistId"] = new SelectList(_context.Artists, "Id", "StageName");
+            ViewData["ArtistId"] = new SelectList(_artistService.GetAllArtists(), "Id", "StageName");
             return View();
         }
 
@@ -57,33 +59,32 @@ namespace MusicStoreApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AlbumName,AlbumPrice,AlbumImage,AlbumDescription,AlbumRating,ArtistId,Id")] Album album)
+        public IActionResult Create([Bind("AlbumName,AlbumPrice,AlbumImage,AlbumDescription,AlbumRating,ArtistId,Id")] Album album)
         {
             if (ModelState.IsValid)
             {
                 album.Id = Guid.NewGuid();
-                _context.Add(album);
-                await _context.SaveChangesAsync();
+                _albumService.CreateNewAlbum(album);
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ArtistId"] = new SelectList(_context.Artists, "Id", "Id", album.ArtistId);
+            ViewData["ArtistId"] = new SelectList(_artistService.GetAllArtists(), "Id", "Id", album.ArtistId);
             return View(album);
         }
 
         // GET: Albums/Edit/5
-        public async Task<IActionResult> Edit(Guid? id)
+        public IActionResult Edit(Guid? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var album = await _context.Albums.FindAsync(id);
+            var album = _albumService.GetDetailsForAlbum(id.Value);
             if (album == null)
             {
                 return NotFound();
             }
-            ViewData["ArtistId"] = new SelectList(_context.Artists, "Id", "Id", album.ArtistId);
+            ViewData["ArtistId"] = new SelectList(_artistService.GetAllArtists(), "Id", "Id", album.ArtistId);
             return View(album);
         }
 
@@ -92,7 +93,7 @@ namespace MusicStoreApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("AlbumName,AlbumPrice,AlbumImage,AlbumDescription,ArtistId,Id")] Album album)
+        public IActionResult Edit(Guid id, [Bind("AlbumName,AlbumPrice,AlbumImage,AlbumDescription,ArtistId,Id")] Album album)
         {
             if (id != album.Id)
             {
@@ -103,8 +104,7 @@ namespace MusicStoreApp.Controllers
             {
                 try
                 {
-                    _context.Update(album);
-                    await _context.SaveChangesAsync();
+                    _albumService.UpdateExistingAlbum(album);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -119,21 +119,24 @@ namespace MusicStoreApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ArtistId"] = new SelectList(_context.Artists, "Id", "Id", album.ArtistId);
+            ViewData["ArtistId"] = new SelectList(_artistService.GetAllArtists(), "Id", "Id", album.ArtistId);
             return View(album);
         }
 
         // GET: Albums/Delete/5
-        public async Task<IActionResult> Delete(Guid? id)
+        public IActionResult Delete(Guid? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var album = await _context.Albums
+/*            var album = await _context.Albums
                 .Include(a => a.Artist)
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);*/
+
+            var album = _albumService.GetDetailsForAlbum(id.Value);
+
             if (album == null)
             {
                 return NotFound();
@@ -147,19 +150,14 @@ namespace MusicStoreApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var album = await _context.Albums.FindAsync(id);
-            if (album != null)
-            {
-                _context.Albums.Remove(album);
-            }
+            _albumService.DeleteAlbum(id);
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool AlbumExists(Guid id)
         {
-            return _context.Albums.Any(e => e.Id == id);
+            return _albumService.GetDetailsForAlbum(id) != null;
         }
     }
 }

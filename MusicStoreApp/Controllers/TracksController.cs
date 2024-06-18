@@ -7,31 +7,41 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using MusicStoreApp.Data;
-using MusicStoreApp.Models;
+using MusicStore.Domain.DomainModels;
+using MusicStore.Repository;
+using MusicStore.Repository.Interface;
+using MusicStore.Service.Interface;
 using NuGet.DependencyResolver;
 
 namespace MusicStoreApp.Controllers
 {
     public class TracksController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ITrackService _trackService;
+        private readonly IUserRepository _userRepository;
+        private readonly IUserPlaylistService _userPlaylistService;
+        private readonly IAlbumService _albumService;
 
-        public TracksController(ApplicationDbContext context)
+        public TracksController(
+            ITrackService trackService, 
+            IUserRepository userRepository, 
+            IUserPlaylistService userPlaylistService,
+            IAlbumService albumService)
         {
-            _context = context;
+            _trackService = trackService;
+            _userRepository = userRepository;
+            _userPlaylistService = userPlaylistService;
+            _albumService = albumService;
         }
 
         [Authorize]
         public IActionResult AddToPlaylist(Guid id)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var createdBy = _context.Users
-                .Include("UserPlaylists")
-                .FirstOrDefault(u => u.Id == userId);
+            var createdBy = _userRepository.Get(userId);
             var playlists = createdBy.UserPlaylists;
             ViewData["UserPlaylists"] = new SelectList(playlists, "Id", "Name");
-            var track = _context.Tracks.FirstOrDefault(x => x.Id == id);
+            var track = _trackService.GetDetailsForTrack(id);
             return View(track);
         }
 
@@ -40,38 +50,13 @@ namespace MusicStoreApp.Controllers
         public IActionResult AddToPlaylist(Guid trackId, Guid playlistId)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var createdBy = _context.Users
-                .Include("UserPlaylists")
-                .FirstOrDefault(u => u.Id == userId);
+            var createdBy = _userRepository.Get(userId);
             var playlists = createdBy.UserPlaylists;
             ViewData["UserPlaylists"] = new SelectList(playlists, "Id", "Name");
-            var selectedTrack = _context.Tracks.FirstOrDefault(x => x.Id == trackId);
-            var selectedPlaylist = _context.UserPlaylists.FirstOrDefault(x => x.Id == playlistId);
+            var selectedTrack = _trackService.GetDetailsForTrack(trackId);
+            var selectedPlaylist = _userPlaylistService.GetDetailsForUserPlaylist(playlistId);
 
-            if (selectedPlaylist != null && selectedTrack != null)
-            {
-                if (selectedPlaylist.TrackInUserPlaylists == null)
-                {
-                    selectedPlaylist.TrackInUserPlaylists = new List<TrackInUserPlaylist>();
-                }
-                if (!selectedPlaylist.TrackInUserPlaylists.Any(t => t.TrackId == trackId))
-                {
-                    var trackInUserPlaylist = new TrackInUserPlaylist
-                    {
-                        TrackId = trackId,
-                        UserPlaylistId = playlistId,
-                        Track = selectedTrack,
-                        UserPlaylist = selectedPlaylist,
-                        Id = Guid.NewGuid()
-                    };
-                    selectedPlaylist.TotalTracks += 1;
-                    _context.TrackInUserPlaylists.Add(trackInUserPlaylist);
-                    _context.SaveChanges();
-                }
-            }
-
-
-
+            _trackService.AddTrackToUserPlaylist(selectedPlaylist, selectedTrack);
 
             return RedirectToAction(nameof(Index));
         }
@@ -80,41 +65,29 @@ namespace MusicStoreApp.Controllers
         public IActionResult DeleteFromUserPlaylist(Guid id)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var createdBy = _context.Users
-                .Include("UserPlaylists")
-                .FirstOrDefault(u => u.Id == userId);
-            var playlists = createdBy.UserPlaylists;
-            var selectedTrackInPlaylist = _context.TrackInUserPlaylists.FirstOrDefault(x => x.TrackId == id);
-            var selectedPlaylist = selectedTrackInPlaylist.UserPlaylist;
-            if (selectedTrackInPlaylist != null)
-            {
-                _context.TrackInUserPlaylists.Remove(selectedTrackInPlaylist);
-                selectedPlaylist.TotalTracks -= 1;
-                _context.SaveChanges();
-            }
+
+            _trackService.DeleteTrackFromUserPlaylist(id, userId);
 
             return RedirectToAction("Index", "UserPlaylists");
         }
 
 
         // GET: Tracks
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var applicationDbContext = _context.Tracks.Include(t => t.Album);
-            return View(await applicationDbContext.ToListAsync());
+            return View(_trackService.GetAllTracks());
         }
 
         // GET: Tracks/Details/5
-        public async Task<IActionResult> Details(Guid? id)
+        public IActionResult Details(Guid? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var track = await _context.Tracks
-                .Include(t => t.Album)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var track = _trackService.GetDetailsForTrack(id.Value);
+
             if (track == null)
             {
                 return NotFound();
@@ -126,7 +99,7 @@ namespace MusicStoreApp.Controllers
         // GET: Tracks/Create
         public IActionResult Create()
         {
-            ViewData["AlbumId"] = new SelectList(_context.Albums, "Id", "AlbumName");
+            ViewData["AlbumId"] = new SelectList(_albumService.GetAllAlbums(), "Id", "AlbumName");
             return View();
         }
 
@@ -135,33 +108,32 @@ namespace MusicStoreApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TrackName,Duration,AlbumId,Id")] Track track)
+        public IActionResult Create([Bind("TrackName,Duration,AlbumId,Id")] Track track)
         {
             if (ModelState.IsValid)
             {
                 track.Id = Guid.NewGuid();
-                _context.Add(track);
-                await _context.SaveChangesAsync();
+                _trackService.CreateNewTrack(track);
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AlbumId"] = new SelectList(_context.Albums, "Id", "Id", track.AlbumId);
+            ViewData["AlbumId"] = new SelectList(_albumService.GetAllAlbums(), "Id", "Id", track.AlbumId);
             return View(track);
         }
 
         // GET: Tracks/Edit/5
-        public async Task<IActionResult> Edit(Guid? id)
+        public IActionResult Edit(Guid? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var track = await _context.Tracks.FindAsync(id);
+            var track = _trackService.GetDetailsForTrack(id.Value);
             if (track == null)
             {
                 return NotFound();
             }
-            ViewData["AlbumId"] = new SelectList(_context.Albums, "Id", "Id", track.AlbumId);
+            ViewData["AlbumId"] = new SelectList(_albumService.GetAllAlbums(), "Id", "Id", track.AlbumId);
             return View(track);
         }
 
@@ -170,7 +142,7 @@ namespace MusicStoreApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("TrackName,Duration,AlbumId,Id")] Track track)
+        public IActionResult Edit(Guid id, [Bind("TrackName,Duration,AlbumId,Id")] Track track)
         {
             if (id != track.Id)
             {
@@ -181,8 +153,7 @@ namespace MusicStoreApp.Controllers
             {
                 try
                 {
-                    _context.Update(track);
-                    await _context.SaveChangesAsync();
+                    _trackService.UpdateExistingTrack(track);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -197,7 +168,7 @@ namespace MusicStoreApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AlbumId"] = new SelectList(_context.Albums, "Id", "Id", track.AlbumId);
+            ViewData["AlbumId"] = new SelectList(_albumService.GetAllAlbums(), "Id", "Id", track.AlbumId);
             return View(track);
         }
 
@@ -209,9 +180,7 @@ namespace MusicStoreApp.Controllers
                 return NotFound();
             }
 
-            var track = await _context.Tracks
-                .Include(t => t.Album)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var track = _trackService.GetDetailsForTrack(id.Value);
             if (track == null)
             {
                 return NotFound();
@@ -225,19 +194,13 @@ namespace MusicStoreApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            var track = await _context.Tracks.FindAsync(id);
-            if (track != null)
-            {
-                _context.Tracks.Remove(track);
-            }
-
-            await _context.SaveChangesAsync();
+            _trackService.DeleteTrack(id);
             return RedirectToAction(nameof(Index));
         }
 
         private bool TrackExists(Guid id)
         {
-            return _context.Tracks.Any(e => e.Id == id);
+            return _trackService.GetDetailsForTrack(id) != null;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model List<MusicStoreApp.Models.Album>
+﻿@model List<MusicStore.Domain.DomainModels.Album>
 
 @{
     ViewData["Title"] = "Index";
@@ -30,6 +30,7 @@
                     <p class="card-text">Price: €@item.AlbumPrice</p>
                     <p class="card-text">By: @item.Artist.StageName</p>
                     <p class="card-text">Rating: @item.AlbumRating</p>
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
                 </div>
             </div>
     </div>

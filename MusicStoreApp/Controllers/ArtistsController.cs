@@ -5,36 +5,38 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using MusicStoreApp.Data;
-using MusicStoreApp.Models;
+using MusicStore.Domain.DomainModels;
+using MusicStore.Repository;
+using MusicStore.Service.Interface;
+
 
 namespace MusicStoreApp.Controllers
 {
     public class ArtistsController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IArtistService _artistService;
 
-        public ArtistsController(ApplicationDbContext context)
+        public ArtistsController(IArtistService artistService)
         {
-            _context = context;
+            _artistService = artistService;
         }
 
         // GET: Artists
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _context.Artists.ToListAsync());
+            return View(_artistService.GetAllArtists());
         }
 
         // GET: Artists/Details/5
-        public async Task<IActionResult> Details(Guid? id)
+        public IActionResult Details(Guid? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var artist = await _context.Artists
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var artist = _artistService.GetDetailsForArtist(id.Value);
+
             if (artist == null)
             {
                 return NotFound();
@@ -54,27 +56,26 @@ namespace MusicStoreApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("FirstName,LastName,StageName,Age,Id")] Artist artist)
+        public IActionResult Create([Bind("FirstName,LastName,StageName,Age,Id")] Artist artist)
         {
             if (ModelState.IsValid)
             {
                 artist.Id = Guid.NewGuid();
-                _context.Add(artist);
-                await _context.SaveChangesAsync();
+                _artistService.CreateNewArtist(artist);
                 return RedirectToAction(nameof(Index));
             }
             return View(artist);
         }
 
         // GET: Artists/Edit/5
-        public async Task<IActionResult> Edit(Guid? id)
+        public IActionResult Edit(Guid? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var artist = await _context.Artists.FindAsync(id);
+            var artist = _artistService.GetDetailsForArtist(id.Value);
             if (artist == null)
             {
                 return NotFound();
@@ -87,7 +88,7 @@ namespace MusicStoreApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("FirstName,LastName,StageName,Age,Id")] Artist artist)
+        public IActionResult Edit(Guid id, [Bind("FirstName,LastName,StageName,Age,Id")] Artist artist)
         {
             if (id != artist.Id)
             {
@@ -98,8 +99,7 @@ namespace MusicStoreApp.Controllers
             {
                 try
                 {
-                    _context.Update(artist);
-                    await _context.SaveChangesAsync();
+                    _artistService.UpdateExistingArtist(artist);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -118,15 +118,15 @@ namespace MusicStoreApp.Controllers
         }
 
         // GET: Artists/Delete/5
-        public async Task<IActionResult> Delete(Guid? id)
+        public IActionResult Delete(Guid? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var artist = await _context.Artists
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var artist = _artistService.GetDetailsForArtist(id.Value);
+
             if (artist == null)
             {
                 return NotFound();
@@ -138,21 +138,16 @@ namespace MusicStoreApp.Controllers
         // POST: Artists/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(Guid id)
+        public IActionResult DeleteConfirmed(Guid id)
         {
-            var artist = await _context.Artists.FindAsync(id);
-            if (artist != null)
-            {
-                _context.Artists.Remove(artist);
-            }
-
-            await _context.SaveChangesAsync();
+            _artistService.DeleteArtist(id);
+            
             return RedirectToAction(nameof(Index));
         }
 
         private bool ArtistExists(Guid id)
         {
-            return _context.Artists.Any(e => e.Id == id);
+            return _artistService.GetDetailsForArtist(id) != null;
         }
     }
 }
