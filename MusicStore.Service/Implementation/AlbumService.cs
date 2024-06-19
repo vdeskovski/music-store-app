@@ -1,4 +1,5 @@
 ﻿using MusicStore.Domain.DomainModels;
+using MusicStore.Repository.Implementation;
 using MusicStore.Repository.Interface;
 using MusicStore.Service.Interface;
 
@@ -9,10 +10,12 @@ namespace MusicStore.Service.Implementation
     {
 
         private readonly IAlbumRepository _albumRepository;
+        private readonly IUserPlaylistRepository _userPlaylistRepository;
 
-        public AlbumService(IAlbumRepository albumRepository)
+        public AlbumService(IAlbumRepository albumRepository, IUserPlaylistRepository userPlaylistRepository)
         {
             _albumRepository = albumRepository;
+            this._userPlaylistRepository = userPlaylistRepository;
         }
 
         public void CreateNewAlbum(Album a)
@@ -24,6 +27,15 @@ namespace MusicStore.Service.Implementation
         {
             var album = _albumRepository.Get(id);
             _albumRepository.Delete(album);
+            var userPlaylists = _userPlaylistRepository.GetAll()
+                .ToList();
+
+            foreach (var userPlaylist in userPlaylists)
+            {
+                userPlaylist.TotalTracks = userPlaylist.TrackInUserPlaylists.Count;
+            }
+
+            _userPlaylistRepository.SaveChanges();
         }
 
         public List<Album> GetAllAlbums()

@@ -15,11 +15,12 @@ namespace MusicStoreApp.Controllers
     {
         private readonly IAlbumService _albumService;
         private readonly IArtistService _artistService;
-
-        public AlbumsController(IAlbumService albumService, IArtistService artistService)
+        private readonly ITrackService _trackService;
+        public AlbumsController(IAlbumService albumService, IArtistService artistService, ITrackService trackService)
         {
             _albumService = albumService;
             _artistService = artistService;
+            _trackService = trackService;
         }
 
         // GET: Albums
@@ -151,7 +152,7 @@ namespace MusicStoreApp.Controllers
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
             _albumService.DeleteAlbum(id);
-
+            _trackService.updateTotalTracks();
             return RedirectToAction(nameof(Index));
         }
 

@@ -15,10 +15,12 @@ namespace MusicStoreApp.Controllers
     public class ArtistsController : Controller
     {
         private readonly IArtistService _artistService;
+        private readonly ITrackService _trackService;
 
-        public ArtistsController(IArtistService artistService)
+        public ArtistsController(IArtistService artistService, ITrackService trackService)
         {
             _artistService = artistService;
+            _trackService = trackService;
         }
 
         // GET: Artists
@@ -141,7 +143,7 @@ namespace MusicStoreApp.Controllers
         public IActionResult DeleteConfirmed(Guid id)
         {
             _artistService.DeleteArtist(id);
-            
+            _trackService.updateTotalTracks();
             return RedirectToAction(nameof(Index));
         }
 

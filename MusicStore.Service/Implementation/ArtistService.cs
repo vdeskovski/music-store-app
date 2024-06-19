@@ -13,9 +13,9 @@ namespace MusicStore.Service.Implementation
     {
         private readonly IRepository<Artist> _artistRepository;
 
-        public ArtistService(IRepository<Artist> movieRepository)
+        public ArtistService(IRepository<Artist> _artistRepository)
         {
-            _artistRepository = movieRepository;
+            this._artistRepository = _artistRepository;
         }
         public void CreateNewArtist(Artist a)
         {
