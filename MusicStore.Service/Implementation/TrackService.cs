@@ -1,16 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MusicStore.Domain.DomainModels;
-using MusicStore.Repository.Implementation;
+﻿using MusicStore.Domain.DomainModels;
 using MusicStore.Repository.Interface;
 using MusicStore.Service.Interface;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace MusicStore.Service.Implementation
 {
@@ -99,8 +89,7 @@ namespace MusicStore.Service.Implementation
 
         public void updateTotalTracks()
         {
-            var userPlaylists = _userPlaylistRepository.GetAll()
-                    .ToList();
+            var userPlaylists = _userPlaylistRepository.GetAll().ToList();
 
             foreach (var userPlaylist in userPlaylists)
             {

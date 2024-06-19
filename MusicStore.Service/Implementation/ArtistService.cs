@@ -1,11 +1,6 @@
 ﻿using MusicStore.Domain.DomainModels;
 using MusicStore.Repository.Interface;
 using MusicStore.Service.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MusicStore.Service.Implementation
 {

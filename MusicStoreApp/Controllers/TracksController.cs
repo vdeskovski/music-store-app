@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
+﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MusicStore.Domain.DomainModels;
-using MusicStore.Repository;
 using MusicStore.Repository.Interface;
 using MusicStore.Service.Interface;
-using NuGet.DependencyResolver;
 
 namespace MusicStoreApp.Controllers
 {
@@ -171,7 +165,7 @@ namespace MusicStoreApp.Controllers
         }
 
         // GET: Tracks/Delete/5
-        public async Task<IActionResult> Delete(Guid? id)
+        public IActionResult Delete(Guid? id)
         {
             if (id == null)
             {
@@ -190,7 +184,7 @@ namespace MusicStoreApp.Controllers
         // POST: Tracks/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(Guid id)
+        public IActionResult DeleteConfirmed(Guid id)
         {
             _trackService.DeleteTrack(id);
             return RedirectToAction(nameof(Index));
