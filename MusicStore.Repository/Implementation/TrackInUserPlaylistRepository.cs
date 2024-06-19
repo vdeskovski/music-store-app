@@ -35,7 +35,7 @@ namespace MusicStore.Repository.Implementation
         public TrackInUserPlaylist Get(Guid id)
         {
             return entities
-                .Include(t => t.UserPlaylist)
+                .Include("UserPlaylist")
                 .First(t => t.Id == id);
         }
 
