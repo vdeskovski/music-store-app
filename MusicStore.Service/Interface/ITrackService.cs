@@ -16,5 +16,6 @@ namespace MusicStore.Service.Interface
         void CreateNewTrack(Track a);
         void UpdateExistingTrack(Track a);
         void DeleteTrack(Guid id);
+        public void updateTotalTracks();
     }
 }

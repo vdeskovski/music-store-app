@@ -28,9 +28,11 @@ namespace MusicStoreApp.Controllers
         }
 
         // GET: UserPlaylists
+        [Authorize]
         public IActionResult Index()
         {
-            return View(_userPlaylistService.GetAllUserPlaylists());
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            return View(_userPlaylistService.GetAllUserPlaylists(userId));
         }
 
         // GET: UserPlaylists/Details/5
@@ -175,7 +177,8 @@ namespace MusicStoreApp.Controllers
                 worksheet.Cell(1, 4).Value = "Description";
                 worksheet.Cell(1, 5).Value = "Total Tracks";
 
-                var data = _userPlaylistService.GetAllUserPlaylists();
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var data = _userPlaylistService.GetAllUserPlaylists(userId);
 
                 for (int i = 0; i < data.Count(); i++)
                 {

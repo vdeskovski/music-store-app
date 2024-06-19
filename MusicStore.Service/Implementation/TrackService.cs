@@ -48,9 +48,10 @@ namespace MusicStore.Service.Implementation
                         UserPlaylist = selectedPlaylist,
                         Id = Guid.NewGuid()
                     };
-                    selectedPlaylist.TotalTracks += 1;
+                    //selectedPlaylist.TotalTracks += 1;
                     _trackInUserPlaylistRepository.Insert(trackInUserPlaylist);
                     _userPlaylistRepository.Update(selectedPlaylist);
+                    updateTotalTracks();
                 }
             }
         }
@@ -61,9 +62,10 @@ namespace MusicStore.Service.Implementation
             var playlist = track.UserPlaylist;
             if (track != null)
             {
-                playlist.TotalTracks -= 1;
+                //playlist.TotalTracks -= 1;
                 _trackInUserPlaylistRepository.Delete(track);
                 _userPlaylistRepository.Update(playlist);
+                updateTotalTracks();
             }
         }
 
@@ -76,6 +78,7 @@ namespace MusicStore.Service.Implementation
         {
             var track = _trackRepository.Get(id);
             _trackRepository.Delete(track);
+            updateTotalTracks();
         }
 
         public List<Track> GetAllTracks()
@@ -92,5 +95,16 @@ namespace MusicStore.Service.Implementation
         {
             _trackRepository.Update(a);
         }
+
+        public void updateTotalTracks()
+        {
+            var userPlaylists = _userPlaylistRepository.GetAll();
+            foreach (var userPlaylist in userPlaylists)
+            {
+                userPlaylist.TotalTracks = userPlaylist.TrackInUserPlaylists.Count();
+                _userPlaylistRepository.Update(userPlaylist);
+            }
+        }
+
     }
 }

@@ -12,10 +12,12 @@ namespace MusicStore.Service.Implementation
     public class UserPlaylistService : IUserPlaylistService
     {
         private readonly IUserPlaylistRepository _userPlaylistRepository;
+        private readonly IUserRepository _userRepository;
 
-        public UserPlaylistService(IUserPlaylistRepository userPlaylistRepository)
+        public UserPlaylistService(IUserPlaylistRepository userPlaylistRepository, IUserRepository userRepository)
         {
             _userPlaylistRepository = userPlaylistRepository;
+            _userRepository = userRepository;
         }
 
         public void CreateNewUserPlaylist(UserPlaylist a)
@@ -29,9 +31,10 @@ namespace MusicStore.Service.Implementation
             _userPlaylistRepository.Delete(userPlaylist);
         }
 
-        public List<UserPlaylist> GetAllUserPlaylists()
+        public List<UserPlaylist> GetAllUserPlaylists(string userId)
         {
-            return _userPlaylistRepository.GetAll().ToList();
+            var user = _userRepository.Get(userId);
+            return _userPlaylistRepository.GetAll().Where(z => z.User == user).ToList();
         }
 
         public UserPlaylist GetDetailsForUserPlaylist(Guid id)
