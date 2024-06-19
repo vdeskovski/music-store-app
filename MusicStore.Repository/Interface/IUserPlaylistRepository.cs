@@ -1,10 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MusicStore.Domain.DomainModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MusicStore.Domain.DomainModels;
 
 namespace MusicStore.Repository.Interface
 {

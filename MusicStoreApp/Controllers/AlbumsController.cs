@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MusicStore.Domain.DomainModels;
-using MusicStore.Repository;
 using MusicStore.Service.Interface;
 
 namespace MusicStoreApp.Controllers
@@ -16,7 +11,10 @@ namespace MusicStoreApp.Controllers
         private readonly IAlbumService _albumService;
         private readonly IArtistService _artistService;
         private readonly ITrackService _trackService;
-        public AlbumsController(IAlbumService albumService, IArtistService artistService, ITrackService trackService)
+        public AlbumsController(
+            IAlbumService albumService, 
+            IArtistService artistService, 
+            ITrackService trackService)
         {
             _albumService = albumService;
             _artistService = artistService;
@@ -26,7 +24,6 @@ namespace MusicStoreApp.Controllers
         // GET: Albums
         public IActionResult Index()
         {
-            //var applicationDbContext = _context.Albums.Include(a => a.Artist);
             return View(_albumService.GetAllAlbums());
         }
 
@@ -131,10 +128,6 @@ namespace MusicStoreApp.Controllers
             {
                 return NotFound();
             }
-
-/*            var album = await _context.Albums
-                .Include(a => a.Artist)
-                .FirstOrDefaultAsync(m => m.Id == id);*/
 
             var album = _albumService.GetDetailsForAlbum(id.Value);
 

@@ -1,11 +1,6 @@
 ﻿using MusicStore.Domain.DomainModels;
 using MusicStore.Repository.Interface;
 using MusicStore.Service.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MusicStore.Service.Implementation
 {
@@ -14,7 +9,9 @@ namespace MusicStore.Service.Implementation
         private readonly IUserPlaylistRepository _userPlaylistRepository;
         private readonly IUserRepository _userRepository;
 
-        public UserPlaylistService(IUserPlaylistRepository userPlaylistRepository, IUserRepository userRepository)
+        public UserPlaylistService(
+            IUserPlaylistRepository userPlaylistRepository, 
+            IUserRepository userRepository)
         {
             _userPlaylistRepository = userPlaylistRepository;
             _userRepository = userRepository;

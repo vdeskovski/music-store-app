@@ -22,7 +22,7 @@ body {
     background-image: url("https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTZ8fGJhY2tncm91bmQlMjBpbWFnZXxlbnwwfHx8fDE3MTg2ODY0MDl8MA&ixlib=rb-4.0.3")
 }
 
-/* wwwroot/css/site.css */
+/* custom styles */
 
 .jumbotron {
     background: linear-gradient(135deg, #ff6600, #ff2400);
@@ -31,13 +31,13 @@ body {
     border-radius: 10px;
 }
 
-    .jumbotron .display-4 {
-        font-weight: 700;
-    }
+.jumbotron .display-4 {
+    font-weight: 700;
+}
 
-    .jumbotron .lead {
-        font-size: 1.5rem;
-    }
+.jumbotron .lead {
+    font-size: 1.5rem;
+}
 
 .btn-lg {
     padding: 0.75rem 1.5rem;
@@ -49,9 +49,9 @@ body {
     transition: transform 0.2s;
 }
 
-    .card:hover {
-        transform: translateY(-10px);
-    }
+.card:hover {
+    transform: translateY(-10px);
+}
 
 .card-title {
     font-size: 1.25rem;
@@ -119,12 +119,6 @@ h1.display-4 {
     margin-bottom: 1rem;
 }
 
-.btn-lg {
-    padding: 0.75rem 1.25rem;
-    font-size: 1.25rem;
-    border-radius: 0.3rem;
-}
-
 .album-card {
     border: none;
     border-radius: 0.5rem;
@@ -132,10 +126,10 @@ h1.display-4 {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-    .album-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
+.album-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
 
 .album-card .card-img-top {
     border-top-left-radius: 0.5rem;
@@ -165,11 +159,11 @@ h1.display-4 {
     border-color: #6c757d;
 }
 
-    .btn-outline-secondary:hover {
-        color: #ffffff;
-        background-color: #6c757d;
-        border-color: #6c757d;
-    }
+.btn-outline-secondary:hover {
+    color: #ffffff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
 
 /* Universe Card Styles */
 .universe-card {
@@ -179,10 +173,10 @@ h1.display-4 {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-    .universe-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
+.universe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 
 .album-card .card-footer {
     background-color: #f8f9fa;
@@ -190,9 +184,9 @@ h1.display-4 {
     padding: 0.75rem 1.25rem;
 }
 
-    .album-card .card-footer .btn {
-        width: 100%;
-    }
+.album-card .card-footer .btn {
+    width: 100%;
+}
 
 .stretched-link::after {
     content: "";
@@ -210,11 +204,9 @@ h1.display-4 {
     margin-right: 5px;
 }
 
-    .btn-group .btn:last-child {
-        margin-right: 0;
-    }
-
-/* wwwroot/css/site.css */
+.btn-group .btn:last-child {
+    margin-right: 0;
+}
 
 /* Styles for the Playlist Details page */
 .display-4 {
@@ -237,11 +229,11 @@ h1.display-4 {
     background-color: #fff;
 }
 
-    .table th,
-    .table td {
-        border-top: 1px solid #dee2e6;
-        padding: 0.75rem;
-    }
+.table th,
+.table td {
+    border-top: 1px solid #dee2e6;
+    padding: 0.75rem;
+}
 
 .table-striped tbody tr:nth-of-type(odd) {
     background-color: rgba(0, 0, 0, 0.05);
@@ -251,9 +243,9 @@ h1.display-4 {
     background-color: rgba(0, 0, 0, 0.075);
 }
 
-/* wwwroot/css/site.css */
 
 /* Styles for the Artist Details page */
+
 .display-4 {
     font-size: 2.5rem;
     font-weight: 300;
@@ -278,13 +270,3 @@ h1.display-4 {
     font-weight: bold;
     margin-left: 0;
 }
-
-
-
-/*@media (max-width: 767.98px) {
-    .dl-horizontal dt, .dl-horizontal dd {
-        width: 100%;
-        text-align: left;
-    }
-}
-*/
