@@ -1,4 +1,5 @@
-﻿using MusicStore.Domain.DomainModels;
+﻿using Microsoft.EntityFrameworkCore;
+using MusicStore.Domain.DomainModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,6 @@ namespace MusicStore.Repository.Interface
         void Insert(UserPlaylist entity);
         void Update(UserPlaylist entity);
         void Delete(UserPlaylist entity);
+        public void SaveChanges();
     }
 }

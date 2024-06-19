@@ -72,5 +72,9 @@ namespace MusicStore.Repository.Implementation
             entities.Update(entity);
             context.SaveChanges();
         }
+        public void SaveChanges()
+        {
+            context.SaveChanges();
+        }
     }
 }

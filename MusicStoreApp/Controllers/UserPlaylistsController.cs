@@ -199,7 +199,7 @@ namespace MusicStoreApp.Controllers
                         totalDurationJ = j;
                     }
                     worksheet.Cell(1, 7 + totalDurationJ).Value = "Total Duration";
-                    worksheet.Cell(i + 2, 7 + totalDurationJ).Value = totalDuration + "min";
+                    worksheet.Cell(i + 2, 7 + totalDurationJ).Value = totalDuration + "sec";
                 }
                 using (var stream = new MemoryStream())
                 {

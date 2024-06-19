@@ -5,9 +5,12 @@ using MusicStore.Repository.Interface;
 using MusicStore.Service.Interface;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace MusicStore.Service.Implementation
 {
@@ -48,10 +51,9 @@ namespace MusicStore.Service.Implementation
                         UserPlaylist = selectedPlaylist,
                         Id = Guid.NewGuid()
                     };
-                    //selectedPlaylist.TotalTracks += 1;
+                    selectedPlaylist.TotalTracks += 1;
                     _trackInUserPlaylistRepository.Insert(trackInUserPlaylist);
                     _userPlaylistRepository.Update(selectedPlaylist);
-                    updateTotalTracks();
                 }
             }
         }
@@ -62,10 +64,9 @@ namespace MusicStore.Service.Implementation
             var playlist = track.UserPlaylist;
             if (track != null)
             {
-                //playlist.TotalTracks -= 1;
+                playlist.TotalTracks -= 1;
                 _trackInUserPlaylistRepository.Delete(track);
                 _userPlaylistRepository.Update(playlist);
-                updateTotalTracks();
             }
         }
 
@@ -98,12 +99,15 @@ namespace MusicStore.Service.Implementation
 
         public void updateTotalTracks()
         {
-            var userPlaylists = _userPlaylistRepository.GetAll();
+            var userPlaylists = _userPlaylistRepository.GetAll()
+                    .ToList();
+
             foreach (var userPlaylist in userPlaylists)
             {
-                userPlaylist.TotalTracks = userPlaylist.TrackInUserPlaylists.Count();
-                _userPlaylistRepository.Update(userPlaylist);
+                userPlaylist.TotalTracks = userPlaylist.TrackInUserPlaylists.Count;
             }
+
+            _userPlaylistRepository.SaveChanges();
         }
 
     }
