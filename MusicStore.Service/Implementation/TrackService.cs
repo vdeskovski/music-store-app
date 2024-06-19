@@ -17,14 +17,17 @@ namespace MusicStore.Service.Implementation
         private readonly ITrackRepository _trackRepository;
         private readonly ITrackInUserPlaylistRepository _trackInUserPlaylistRepository;
         private readonly IUserRepository _userRepository;
+        private readonly IUserPlaylistRepository _userPlaylistRepository;
 
         public TrackService(ITrackRepository trackRepository, 
             ITrackInUserPlaylistRepository trackInUserPlaylistRepository,
-            IUserRepository userRepository)
+            IUserRepository userRepository,
+            IUserPlaylistRepository userPlaylistRepository)
         {
             _trackRepository = trackRepository;
             _trackInUserPlaylistRepository = trackInUserPlaylistRepository;
             _userRepository = userRepository;
+            _userPlaylistRepository = userPlaylistRepository;
         }
 
         public void AddTrackToUserPlaylist(UserPlaylist selectedPlaylist, Track selectedTrack)
@@ -47,20 +50,20 @@ namespace MusicStore.Service.Implementation
                     };
                     selectedPlaylist.TotalTracks += 1;
                     _trackInUserPlaylistRepository.Insert(trackInUserPlaylist);
+                    _userPlaylistRepository.Update(selectedPlaylist);
                 }
             }
         }
 
-        public void DeleteTrackFromUserPlaylist(Guid id, string userId)
+        public void DeleteTrackFromUserPlaylist(Guid id)
         {
-            var createdBy = _userRepository.Get(userId);
-            var playlists = createdBy.UserPlaylists;
-            var selectedTrackInPlaylist = _trackInUserPlaylistRepository.Get(id);
-            var selectedPlaylist = selectedTrackInPlaylist.UserPlaylist;
-            if (selectedTrackInPlaylist != null)
+            var track = _trackInUserPlaylistRepository.Get(id);
+            var playlist = track.UserPlaylist;
+            if (track != null)
             {
-                _trackInUserPlaylistRepository.Delete(selectedTrackInPlaylist);
-                selectedPlaylist.TotalTracks -= 1;
+                playlist.TotalTracks -= 1;
+                _trackInUserPlaylistRepository.Delete(track);
+                _userPlaylistRepository.Update(playlist);
             }
         }
 
