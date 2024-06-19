@@ -5,25 +5,26 @@
 }
 @model MusicStore.Domain.DomainModels.Track
 
-<h1>Add track to a playlist</h1>
+<h1 class="mt-5 mb-4 text-white">Add track to a playlist</h1>
 
-<h4>Select a playlist: </h4>
+<h4 class="mb-3 text-white">Select a playlist:</h4>
 <hr />
-<div class="row">
+
+<div class="row text-white">
     <div class="col-md-4">
         <form asp-action="AddToPlaylist">
-            <input type="hidden"  value="@Model.Id" name="trackId"/>
+            <input type="hidden" value="@Model.Id" name="trackId" />
             <div class="form-group">
-                <label class="control-label">Playlist: </label>
-                <select asp-items="ViewBag.UserPlaylists" name="playlistId" class="form-control"></select>
+                <label for="playlistId" class="control-label">Playlist:</label>
+                <select id="playlistId" name="playlistId" class="form-control" asp-items="ViewBag.UserPlaylists"></select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary mt-3" />
+                <input type="submit" value="Add to Playlist" class="btn btn-primary mt-3" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="mt-1">
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
 </div>

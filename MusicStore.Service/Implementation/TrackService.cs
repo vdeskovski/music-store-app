@@ -59,10 +59,10 @@ namespace MusicStore.Service.Implementation
         {
             var track = _trackInUserPlaylistRepository.Get(id);
             var playlist = track.UserPlaylist;
-            if (playlist != null)
+            if (track != null)
             {
-                _trackInUserPlaylistRepository.Delete(track);
                 playlist.TotalTracks -= 1;
+                _trackInUserPlaylistRepository.Delete(track);
                 _userPlaylistRepository.Update(playlist);
             }
         }

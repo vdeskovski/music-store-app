@@ -1,22 +1,290 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-image: url("https://images.unsplash.com/32/Mc8kW4x9Q3aRR3RkP5Im_IMG_4417.jpg?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTZ8fGJhY2tncm91bmQlMjBpbWFnZXxlbnwwfHx8fDE3MTg2ODY0MDl8MA&ixlib=rb-4.0.3")
 }
+
+/* wwwroot/css/site.css */
+
+.jumbotron {
+    background: linear-gradient(135deg, #ff6600, #ff2400);
+    padding: 3rem 1rem;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+    .jumbotron .display-4 {
+        font-weight: 700;
+    }
+
+    .jumbotron .lead {
+        font-size: 1.5rem;
+    }
+
+.btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+    border-radius: 0.3rem;
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+    .card:hover {
+        transform: translateY(-10px);
+    }
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+.container h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Custom Navbar and Footer Styles */
+.custom-navbar {
+    background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.navbar-brand {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #333333 !important;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.2rem;
+    color: #333333 !important;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    border-bottom: 2px solid #333333;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #555555 !important;
+}
+
+/* Footer Styles */
+.footer {
+    background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+    color: #333333;
+    border-top: 1px solid #dcdcdc;
+}
+
+.footer a.footer-link {
+    color: #333333;
+    text-decoration: none;
+}
+
+.footer a.footer-link:hover {
+    color: #555555;
+    text-decoration: underline;
+}
+
+
+/* Styles for the Albums index page */
+h1.display-4 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.btn-lg {
+    padding: 0.75rem 1.25rem;
+    font-size: 1.25rem;
+    border-radius: 0.3rem;
+}
+
+.album-card {
+    border: none;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+    .album-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+.album-card .card-img-top {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    height: 250px; /* Adjust the height as needed */
+    object-fit: cover;
+}
+
+.album-card .card-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.album-card .card-text {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.album-card .card-body {
+    padding: 1.5rem;
+}
+
+.btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+    .btn-outline-secondary:hover {
+        color: #ffffff;
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+
+/* Universe Card Styles */
+.universe-card {
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+    .universe-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+.album-card .card-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    padding: 0.75rem 1.25rem;
+}
+
+    .album-card .card-footer .btn {
+        width: 100%;
+    }
+
+.stretched-link::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+
+.btn-group .btn {
+    margin-right: 5px;
+}
+
+    .btn-group .btn:last-child {
+        margin-right: 0;
+    }
+
+/* wwwroot/css/site.css */
+
+/* Styles for the Playlist Details page */
+.display-4 {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #6c757d; /* Subdued text color */
+}
+
+.btn-group .btn {
+    border-radius: 0.3rem;
+}
+
+.table {
+    width: 100%;
+    background-color: #fff;
+}
+
+    .table th,
+    .table td {
+        border-top: 1px solid #dee2e6;
+        padding: 0.75rem;
+    }
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.075);
+}
+
+/* wwwroot/css/site.css */
+
+/* Styles for the Artist Details page */
+.display-4 {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #6c757d; /* Subdued text color */
+}
+
+
+.dl-horizontal dt {
+    width: 30%;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dl-horizontal dd {
+    width: 70%;
+    font-weight: bold;
+    margin-left: 0;
+}
+
+
+
+/*@media (max-width: 767.98px) {
+    .dl-horizontal dt, .dl-horizontal dd {
+        width: 100%;
+        text-align: left;
+    }
+}
+*/
