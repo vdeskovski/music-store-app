@@ -163,6 +163,7 @@ namespace MusicStoreApp.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public FileContentResult ExportAllPlaylists()
         {
             string fileName = "Playlists.xlsx";
